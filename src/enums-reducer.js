@@ -8,11 +8,11 @@ export type Action =
 export const SET_ENUMS = 'SET_ENUMS';
 
 export type EnumsStore = {
-  +enums?: Enums,
+  +enums: Enums,
 };
 
 export const initialState: EnumsStore = {
-  enums: undefined,
+  enums: {},
 };
 
 export function enums(state: EnumsStore = initialState, action: Action): EnumsStore {

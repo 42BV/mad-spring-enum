@@ -14,7 +14,7 @@ describe('EnumsService', () => {
 
   function setup({ needsAuthentication }) {
     dispatch = jest.fn();
-    enumsStore = () => ({ });
+    enumsStore = () => ({ enums: {} });
 
     // Mock the action creators
     jest.spyOn(actions, 'setEnums').mockImplementation(() => 'setEnums');

@@ -24,7 +24,7 @@ class MissingEnumException extends Error {
 export function getEnum(enumName: string): EnumValues {
   const store: EnumsStore = getConfig().enumsStore();
 
-  const enumValues =  store[enumName];
+  const enumValues = store.enums[enumName];
 
   if (enumValues) {
     return enumValues;
