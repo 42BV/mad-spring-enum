@@ -1,3 +1,4 @@
+// @flow
 
 import fetchMock from 'fetch-mock';
 
@@ -16,7 +17,10 @@ describe('EnumsService', () => {
     enumsStore = () => ({ });
 
     // Mock the action creators
-    actions.setEnums = jest.fn(() => 'setEnums');
+    jest.spyOn(actions, 'setEnums').mockImplementation(() => 'setEnums');
+
+    // $FlowFixMe
+    actions.setEnums.mockClear();
 
     configureEnums({
       enumsUrl: '/api/enums',

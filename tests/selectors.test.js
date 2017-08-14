@@ -1,3 +1,5 @@
+// @flow
+
 import { configureEnums } from '../src/config';
 
 import { getEnum } from '../src/selectors';

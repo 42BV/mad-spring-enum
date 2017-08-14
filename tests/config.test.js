@@ -1,3 +1,4 @@
+// @flow
 
 import { configureEnums, getConfig } from '../src/config';
 
@@ -7,9 +8,9 @@ test('configuration lifecycle', () => {
 
   // Next we initialize the config.
   const config = {
-    constraintsUrl: '/api/enums',
+    enumsUrl: '/api/enums',
     needsAuthentication: false,
-    dispath: jest.fn,
+    dispatch: jest.fn(),
     enumsStore: () => ({ empty: 'enums' })
   };
 

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index-barrel 1`] = `
+Object {
+  "configureEnums": [Function],
+  "enums": [Function],
+  "getEnum": [Function],
+  "loadEnums": [Function],
+}
+`;

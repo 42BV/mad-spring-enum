@@ -4,7 +4,7 @@ import type { EnumsStore, Action } from './enums-reducer';
 
 export type Config = {
   // The URL which will provide the enums over a GET request.
-  enumssUrl: string,
+  enumsUrl: string,
 
   // Whether or not the 'enumsUrl' should be called with authentication.
   needsAuthentication: boolean,
