@@ -1,6 +1,6 @@
 {
   "name": "mad-spring-enum",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Sharing enums with a Java Spring Boot back-end.",
   "files": [
     "lib"
