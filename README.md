@@ -106,14 +106,11 @@ First install the following dependencies in the package.json:
 Now add the constraints-reducer to your rootReducer for example:
 
 ```js
-// @flow
-
 import { combineReducers } from 'redux';
 
-import type { EnumsStore } from 'mad-spring-enum';
-import { enums } from 'mad-spring-enum';
+import { EnumsStore, enums } from 'mad-spring-enum';
 
-export type Store = {
+export interface Store {
   enums: EnumsStore
 };
 
@@ -163,7 +160,6 @@ as soon as you know that you are logged in:
 
 ```js
 import { loadEnums } from 'mad-spring-enum';
-
 import { login } from 'somewhere';
 
 class Login extends Component {
@@ -187,7 +183,7 @@ Now assuming you have an '' from the back-end and you want to use
 it in the front-end, you can retrieve the values of the enum by calling:
 
 ```js
-import { getEnum } from 'mad-spring-enum';
+import { getEnum, EnumValues } from 'mad-spring-enum';
 import type { EnumValues } from 'mad-spring-enum';
 
 const userRoles: EnumValues = getEnum('UserRole'));

@@ -1,5 +1,3 @@
-// @flow
-
 import * as indexBarrel from '../src/index';
 
 test('index barrel', () => {

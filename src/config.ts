@@ -1,20 +1,18 @@
-// @flow
+import { EnumsStore, EnumActions as Action } from './enums-reducer';
 
-import type { EnumsStore, Action } from './enums-reducer';
-
-export type Config = {
+export interface Config {
   // The URL which will provide the enums over a GET request.
-  enumsUrl: string,
+  enumsUrl: string;
 
   // Whether or not the 'enumsUrl' should be called with authentication.
-  needsAuthentication: boolean,
+  needsAuthentication: boolean;
 
   // The dispatch function for the Redux store.
-  dispatch: (action: Action) => void,
+  dispatch: (action: Action) => void;
 
   // A function which returns the latests EnumsStore from Redux.
-  enumsStore: () => EnumsStore
-};
+  enumsStore: () => EnumsStore;
+}
 
 let config: Config | null = null;
 
@@ -23,7 +21,7 @@ let config: Config | null = null;
  *
  * @param {Config} The new configuration
  */
-export function configureEnums(c: Config) {
+export function configureEnums(c: Config): void {
   config = c;
 }
 

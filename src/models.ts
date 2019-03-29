@@ -1,6 +1,4 @@
-// @flow
-
-export type EnumValues = Array<string>;
+export type EnumValues = string[];
 
 /**
  * The enums should have the following signature:
@@ -16,10 +14,9 @@ export type EnumValues = Array<string>;
  * }
  *
  * The keys represent the name of the enum, in the above case 'UserRole',
- * and 'BillingInterval'. The array points to the possible values 
+ * and 'BillingInterval'. The array points to the possible values
  * of the enum.
  */
-export type Enums = {
-  [key: string]: EnumValues
-};
-
+export interface Enums {
+  [key: string]: EnumValues;
+}
