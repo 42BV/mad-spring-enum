@@ -1,7 +1,14 @@
-
 import { setEnums } from './enums-reducer';
-
 import { getConfig } from './config';
+
+// Throw error when not 200 otherwise parse response.
+function tryParse(response: Response): Promise<any> {
+  if (response.status !== 200) {
+    throw response;
+  } else {
+    return response.json();
+  }
+}
 
 /**
  * Loads the enums from the back-end.
@@ -30,23 +37,11 @@ import { getConfig } from './config';
  *
  * @returns {Promise}
  */
-export function loadEnums(): Promise<*> {
+export async function loadEnums(): Promise<any> {
   const { enumsUrl, needsAuthentication, dispatch } = getConfig();
+  const config: RequestInit = needsAuthentication ? { credentials: 'include' } : {};
 
-  const config = needsAuthentication ? { credentials: 'include'} : {};
-
-  return fetch(enumsUrl, config)
-    .then(tryParse)
-    .then((enums) => {
-      dispatch(setEnums(enums));
-    });
-}
-
-// Throw error when not 200 otherwise parse response.
-function tryParse(response: Response) {
-  if (response.status !== 200) {
-    throw response;
-  } else {
-    return response.json();
-  }
+  const response = await fetch(enumsUrl, config);
+  const enums = await tryParse(response);
+  dispatch(setEnums(enums));
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index-barrel 1`] = `
+exports[`index barrel: index-barrel 1`] = `
 Object {
   "configureEnums": [Function],
   "enums": [Function],

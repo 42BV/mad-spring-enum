@@ -1,5 +1,3 @@
-// @flow
-
 import { configureEnums, getConfig } from '../src/config';
 
 test('configuration lifecycle', () => {
@@ -11,7 +9,7 @@ test('configuration lifecycle', () => {
     enumsUrl: '/api/enums',
     needsAuthentication: false,
     dispatch: jest.fn(),
-    enumsStore: () => ({ enums: { UserRole: ['ADMIN', 'COORDINATOR'] } })
+    enumsStore: () => ({ enums: { UserRole: ['ADMIN', 'COORDINATOR'] } }),
   };
 
   configureEnums(config);

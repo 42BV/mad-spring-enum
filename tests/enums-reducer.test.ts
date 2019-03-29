@@ -1,25 +1,22 @@
-// @flow
-
-import { createStore } from 'redux';
-
-import { enums, setEnums, initialState } from '../src/enums-reducer';
+import { createStore, Store } from 'redux';
+import { enums, setEnums, initialState, EnumsStore } from '../src/enums-reducer';
 
 describe('Store: EnumsStore', () => {
   test('initial state', () => {
     const enumsStore = enums(undefined, {
       type: 'MAD_SPRING_ENUM.SET_ENUMS',
-      enums: {}
+      enums: {},
     });
 
     const expected = {
-      enums: {}
+      enums: {},
     };
 
     expect(enumsStore).toEqual(expected);
   });
 
   describe('actions', () => {
-    let store;
+    let store: Store<EnumsStore>;
 
     beforeEach(() => {
       store = createStore(enums, initialState);
@@ -29,7 +26,6 @@ describe('Store: EnumsStore', () => {
       store.dispatch(setEnums({ UserRoles: ['ADMIN', 'USER'] }));
 
       const state = store.getState();
-
       expect(state.enums).toEqual({ UserRoles: ['ADMIN', 'USER'] });
     });
   });
