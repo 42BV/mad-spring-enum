@@ -18,5 +18,5 @@ export type EnumValues = string[];
  * of the enum.
  */
 export interface Enums {
-  [key: string]: EnumValues;
+  [enumName: string]: EnumValues;
 }
